@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app_with_api/screen/home.dart';
 
 void main() {
@@ -10,14 +11,11 @@ class BaseApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    final textTheme = Theme.of(context).textTheme;
+    return MaterialApp(
       theme: ThemeData(
-        textTheme:  TextTheme(
-
-          bodyLarge: TextStyle(),
-          bodyMedium: TextStyle(),
-        ).apply(
-          bodyColor: Colors.white,
+        textTheme: GoogleFonts.poppinsTextTheme(textTheme).copyWith(
+          bodyMedium: GoogleFonts.oswald(textStyle: textTheme.bodyMedium),
         ),
       ),
       debugShowCheckedModeBanner: false,

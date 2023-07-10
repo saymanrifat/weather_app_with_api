@@ -41,6 +41,7 @@ dependencies:
   geocoding: ^2.1.0
   intl: ^0.18.1
   liquid_pull_to_refresh: ^3.0.1
+  google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +81,15 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
+  #   - family: Poppins
+  #   fonts:
+  #     - asset: assets/fonts/poppins/regular.ttf
+  #     - asset: assets/fonts/poppins/bold.ttf
+  #       style: bold
+  #     - asset: assets/fonts/poppins/thin.ttf
+  #       weight: 200
+  #     - asset: assets/fonts/poppins/light.ttf
+  #       weight: 400
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

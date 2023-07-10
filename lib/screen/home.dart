@@ -45,8 +45,16 @@ class _HomeScreenState extends State<HomeScreen> {
         await placemarkFromCoordinates(position.latitude, position.longitude);
     print(placemark[0].street);
     myCityName = placemark[0].street.toString();
-    Response response = await get(Uri.parse(
-        'https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude.toString()}&lon=${position.longitude.toString()}&appid=48529ee6ace6bc66d6df70d8ec41fdd0'));
+
+    late Response response;
+
+    try {
+      response = await get(Uri.parse(
+          'https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude.toString()}&lon=${position.longitude.toString()}&appid=48529ee6ace6bc66d6df70d8ec41fdd0'));
+    } catch (error) {
+      print('Faild to Fatch Data');
+    }
+
     Map<String, dynamic> decodedResponse = jsonDecode(response.body);
 
     print(decodedResponse);
@@ -110,7 +118,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Text(
                     "Updated: ${weatherData[0].time}",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w200),
+                    style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w200,
+                        color: Colors.white),
                   ),
                   const Gap(50),
                   Row(
@@ -124,7 +135,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       const Gap(30),
                       Text(
                         weatherData[0].temp + " \u00b0",
-                        style: const TextStyle(fontSize: 42),
+                        style: const TextStyle(
+                          fontSize: 42,
+                          color: Colors.white,
+                        ),
                       ),
                       const Gap(30),
                       Column(
@@ -140,7 +154,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   Gap(30),
                   Text(
                     weatherData[0].weatherDesc,
-                    style: TextStyle(fontSize: 42, fontWeight: FontWeight.w200),
+                    style: TextStyle(
+                      fontSize: 42,
+                      fontWeight: FontWeight.w200,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
