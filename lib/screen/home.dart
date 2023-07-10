@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Paw Weather"),
+        title: const Text("Ostad Weather"),
         actions: [
           IconButton(
               onPressed: () {
